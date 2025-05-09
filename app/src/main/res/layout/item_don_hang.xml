@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/ma_don_hang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Mã đơn: DH001" />
+
+        <TextView
+            android:id="@+id/ngay_dat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:text="Ngày đặt: 15/04/2025" />
+
+        <TextView
+            android:id="@+id/tong_tien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:text="Tổng tiền: 5,990,000 VNĐ" />
+
+        <TextView
+            android:id="@+id/trang_thai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:text="Trạng thái: Đã đặt" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_huy_don"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy đơn"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FF5722"
+            app:cornerRadius="8dp"
+            android:visibility="visible" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

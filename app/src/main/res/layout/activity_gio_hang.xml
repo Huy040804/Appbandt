@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/tieu_de"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giỏ hàng của bạn"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:background="@drawable/title_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Thông báo giỏ hàng trống -->
+    <TextView
+        android:id="@+id/gio_hang_trong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giỏ hàng của bạn đang trống!"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tieu_de"
+        app:layout_constraintBottom_toTopOf="@id/tong_tien_container" />
+
+    <!-- RecyclerView danh sách sản phẩm -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_danh_sach"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tieu_de"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tong_tien_container">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/danh_sach_gio_hang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            android:contentDescription="Danh sách sản phẩm trong giỏ hàng" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Phần tổng tiền và nút -->
+    <LinearLayout
+        android:id="@+id/tong_tien_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/card_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tong_tien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền: 0 VNĐ"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textColor="@android:color/holo_green_dark"
+            android:contentDescription="Tổng tiền giỏ hàng" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_quay_lai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quay lại"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@android:color/darker_gray"
+                app:cornerRadius="8dp"
+                android:contentDescription="Nút quay lại" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_mua_hang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mua hàng"
+                android:backgroundTint="#FF5722"
+                app:cornerRadius="8dp"
+                android:contentDescription="Nút mua hàng" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

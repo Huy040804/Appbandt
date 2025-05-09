@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Danh sách điện thoại"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp"
+        android:textColor="@android:color/black"/>
+
+    <!-- RecyclerView hiển thị danh sách sản phẩm -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/danh_sach_san_pham"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:contentDescription="Danh sách sản phẩm"/>
+
+    <!-- Phần thêm sản phẩm (dành cho admin) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/them_san_pham_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/nhap_ten_san_pham"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên điện thoại"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/nhap_gia_san_pham"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Giá (VNĐ)"
+                android:inputType="number"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_them_san_pham"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thêm sản phẩm"
+                android:layout_gravity="center"
+                app:cornerRadius="8dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Nút xem giỏ hàng -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nutxem_gio_hang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem giỏ hàng"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="8dp"/>
+
+    <!-- Nút đăng xuất -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nut_dang_xuat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng xuất"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        app:cornerRadius="8dp"
+        android:onClick="logout"/>
+</LinearLayout>
